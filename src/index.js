@@ -1,8 +1,10 @@
 import React from 'react';
 import {Text} from 'react-native';
 
+import Routes from './routes';
+
 const App: () => React$Node = () => {
-  return <Text>Go Barber</Text>;
+  return <Routes />;
 };
 
 export default App;
