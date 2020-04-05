@@ -12,7 +12,6 @@ export default function Button({children, loading, ...rest}) {
       ) : (
         <Text>{children}</Text>
       )}
-      <Text />
     </Container>
   );
 }
