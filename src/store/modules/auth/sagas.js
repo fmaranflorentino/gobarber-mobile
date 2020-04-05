@@ -7,7 +7,7 @@ import {signInSuccess, signFailure, signUpSuccess} from './actions';
 export function* signIn({payload}) {
   try {
     const {email, password} = payload;
-
+    console.tron.log('LIXO', payload);
     const response = yield call(api.post, 'sessions', {
       email,
       password,
@@ -43,7 +43,6 @@ export function* signUp({payload}) {
       name,
       email,
       password,
-      provider: true,
     });
 
     Alert.alert(
