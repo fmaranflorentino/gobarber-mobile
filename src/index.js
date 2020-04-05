@@ -8,7 +8,7 @@ import '~/config/ReactotronConfig';
 import {store, persistor} from './store';
 import Routes from './routes';
 
-const App: () => React$Node = () => {
+const Index: () => React$Node = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
@@ -19,4 +19,4 @@ const App: () => React$Node = () => {
   );
 };
 
-export default App;
+export default Index;
