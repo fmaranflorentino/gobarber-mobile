@@ -38,14 +38,17 @@ export default function New() {
         }}
       />
       <Stack.Screen
-        options={{
-          title: 'Selecione o horário',
-          headerTransparent: true,
-          headerTintColor: '#fff',
-        }}
         name="SelectDateTime"
         component={SelectDateTime}
-        title="Selecione o horário"
+        options={{
+          title: 'Selecione o horário',
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SelectProvider')}>
+              <Icon name="chevron-left" size={40} color="#fff" />
+            </TouchableOpacity>
+          ),
+        }}
       />
       <Stack.Screen
         options={{
