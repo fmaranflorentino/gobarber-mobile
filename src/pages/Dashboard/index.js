@@ -23,11 +23,11 @@ export default function Dashboard() {
     const response = await api.delete(`appointments/${id}`);
 
     setAppointments(
-      appointments.map((appointment) => {
+      appointments.map((appointment) =>
         appointment.id === id
           ? {...appointment, canceled_at: response.data.canceled_at}
-          : appointment;
-      }),
+          : appointment,
+      ),
     );
   }
 
@@ -40,7 +40,7 @@ export default function Dashboard() {
           data={appointments}
           keyExtractor={(item) => String(item.id)}
           renderItem={({item}) => (
-            <Appointment onCancel={() => handleCancel(item.id)} data={item} />
+            <Appointment data={item} onCancel={() => handleCancel(item.id)} />
           )}
         />
       </Container>
