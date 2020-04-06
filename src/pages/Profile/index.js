@@ -1,6 +1,7 @@
 import React, {useRef, useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {updateProfileRequest} from '~/store/modules/user/actions';
+import {signOut} from '~/store/modules/auth/actions';
 
 import Background from '~/components/Background';
 
@@ -10,6 +11,7 @@ import {
   Form,
   FormInput,
   SubmitButton,
+  LogoutButton,
   Separator,
 } from './styles';
 
@@ -44,6 +46,10 @@ export default function Profile() {
         confirmPassword,
       }),
     );
+  }
+
+  function handleLogout() {
+    dispatch(signOut());
   }
 
   return (
@@ -112,6 +118,7 @@ export default function Profile() {
           />
 
           <SubmitButton onPress={handleSubmit}>Atualizar perfil</SubmitButton>
+          <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
         </Form>
       </Container>
     </Background>
